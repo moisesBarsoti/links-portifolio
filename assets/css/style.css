@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     outline: none;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -20,12 +23,30 @@
     --white: #fff;
     --blue: #22D4FD;
     --black: #000;
+    --transparente-02:  rgba(255,255,255, 0.2);
+
+    /* Font-family */
+    --montserrat: "Montserrat";
+    --krona-one: "Krona One";
 }
 
 body {
     background: var(--background-color);
     color: var(--white);
-    height: 100vh;
+}
+
+/* Barra de rolagem */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
 }
 
 /* main */
@@ -33,7 +54,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15%;
+    padding: 6% 10%;
 }
 
 /* Section */
@@ -44,13 +65,19 @@ main section {
     gap: 1.5rem;
 }
 
-/* Titulo */
+/* Título Linktree */
 main section h1 {
-    font-family: "Krona One", sans-serif;
-    font-size: 36px;
+    font-size: 1.9rem;
+    color: var(--blue);
 }
 
-main section h1 span {
+/* Titulo */
+main section h2 {
+    font-family: var(--krona-one), sans-serif;
+    font-size: 2.3rem;
+}
+
+main section h2 span {
     color: var(--blue);
     font-weight: bold;
 }
@@ -58,24 +85,51 @@ main section h1 span {
 /* Paragrafo */
 main section p {
     font-size: 1,5rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--montserrat), sans-serif;
+}
+
+/* h2 subtítulo */
+main section #links h2 {
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
 /* Links */
 main section #links {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;    
+    gap: 2rem;
 } 
 
+main section #links svg {
+    color: var(--blue);
+}
+
 main section #links a {
-    background-color: var(--blue);
-    width: 17.5rem;
-    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 23.6rem;
+    border-radius: 10px;
     text-align: center;
-    font-size: 20px;
     padding: 18.5px 0;
-    color: var(--black);
-    font-family: "Montserrat", sans-serif;
+
+    border: solid 1px var(--blue);
+    color: var(--white);
+    font-family: var(--montserrat), sans-serif;
+    font-size: 20px;
+
+    transition: all .5s ease-in-out;
+}
+
+main section #links a:hover {
+    background: var(--transparente-02);
+    transform: scale(1.1);
 }
 
 /* Fotografia */
@@ -84,6 +138,77 @@ main img {
     height: 380px;
     border-radius: 10px;
     border: solid 2px var(--blue);
-    padding: 15px 10px 0 0;
     box-shadow: 0 0 20px var(--blue);
 }
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 2rem 2rem;
+
+    border-top: solid 2px var(--blue);
+}
+
+footer a {
+    font-family: var(--montserrat);
+    color: var(--white);
+    font-weight: bold;
+}
+
+footer a:hover {
+    border-bottom: solid 2px var(--blue);
+}
+
+
+/* Animações */
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+ h1,
+ h2,
+ p,   
+ #github,
+ #instagram,
+ #linkedin,
+ img {
+    opacity: 0;
+    animation: aparecer 2.1s forwards;
+    transition: .5s;
+  }
+  
+  h1 {
+    animation-delay: 0.1s;
+  }
+
+  h2 {
+    animation-delay: 0.9s;
+  }
+
+  p {
+    animation-delay: 0.9s;
+  }
+  
+  #github {
+    animation-delay: 1.4s; 
+  }
+
+  #instagram {
+    animation-delay: 2s; 
+  }
+  
+  #linkedin {
+    animation-delay: 2.6s;
+  }
+
+  img {
+    animation-delay: 3.2s;
+  }
