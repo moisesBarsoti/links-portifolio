@@ -54,6 +54,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 5rem;
     padding: 6% 10%;
 }
 
@@ -194,7 +195,7 @@ footer a:hover {
   }
 
   p {
-    animation-delay: 0.9s;
+    animation-delay: 1s;
   }
   
   #github {
@@ -211,4 +212,51 @@ footer a:hover {
 
   img {
     animation-delay: 3.2s;
+  }
+
+  /* Responsividade */
+
+  @media (max-width: 900px) {
+    main {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    main section {
+        width: auto;
+    }
+
+    main img {
+        width: 50%;
+    }
+
+    /* Animação */
+    img {
+        animation-delay: 0.1s;
+    }
+    
+    h1 {
+        animation-delay: 0.3s;
+    }
+
+    h2 {
+        animation-delay: 0.9s;
+    }
+
+    p {
+        animation-delay: 1s;
+    }
+    
+    #github {
+        animation-delay: 1.4s; 
+    }
+
+    #instagram {
+        animation-delay: 2s; 
+    }
+    
+    #linkedin {
+        animation-delay: 2.6s;
+    }
+
   }
