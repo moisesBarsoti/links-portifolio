@@ -120,6 +120,7 @@ main section #links a {
     text-align: center;
     padding: 18.5px 0;
 
+    box-shadow:  0 0 12px var(--blue);
     border: solid 1px var(--blue);
     color: var(--white);
     font-family: var(--montserrat), sans-serif;
@@ -195,23 +196,27 @@ footer a:hover {
   }
 
   p {
-    animation-delay: 1s;
+    animation-delay: 1.2s;
+  }
+
+  h2#acesseMinhasRedes {
+    animation-delay: 1.5s;
   }
   
   #github {
-    animation-delay: 1.4s; 
+    animation-delay: 1.6s; 
   }
 
   #instagram {
-    animation-delay: 2s; 
+    animation-delay: 2.2s; 
   }
   
   #linkedin {
-    animation-delay: 2.6s;
+    animation-delay: 2.8s;
   }
 
   img {
-    animation-delay: 3.2s;
+    animation-delay: 3.6s;
   }
 
   /* Responsividade */
@@ -230,6 +235,14 @@ footer a:hover {
         width: 50%;
     }
 
+    #links {
+        margin-top: 2rem;
+    }
+
+    footer {
+        padding: 1rem 2rem;
+    }
+
     /* Animação */
     img {
         animation-delay: 0.1s;
@@ -244,7 +257,7 @@ footer a:hover {
     }
 
     p {
-        animation-delay: 1s;
+        animation-delay: 1.2s;
     }
     
     #github {
